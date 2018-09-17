@@ -27,7 +27,7 @@ module.exports = {
     'class-methods-use-this': 0,
   },
   settings: {
-    'import/core-modules': [ 'jquery', 'vizhub' ],
+    'import/core-modules': [],
     'import/resolver': 'webpack',
   },
   env: {
