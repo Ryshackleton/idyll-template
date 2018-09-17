@@ -22,6 +22,8 @@ export async function fetchJSON(url, params = {}) {
   }
 }
 
-export function simulateDelayedFetch(ms, x) {
-  return new Promise((resolve) => { return setTimeout(() => { return resolve(x); }, ms); });
+export function simulateDelayedFetch(ms, value) {
+  return new Promise(((resolve) => {
+    setTimeout(resolve, ms, value);
+  }));
 }

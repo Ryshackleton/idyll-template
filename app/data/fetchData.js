@@ -1,8 +1,16 @@
+import { keys, values } from 'lodash';
 import dataFetches from './dataFetches';
 
 export default async () => {
-  return (await Promise.all(await dataFetches()))
-    .reduce((acc, obj) => { // flatten array of objects to single object
-      return { ...acc, ...obj };
+  const datasetNamesArray = keys(dataFetches);
+  const datasetPromisesArray = values(dataFetches);
+
+  // fetch the data and reaassign the dataset to the appropriate dataset name
+  return (await Promise.all(datasetPromisesArray))
+    .reduce((acc, dataSet, index) => {
+      return {
+        ...acc,
+        [datasetNamesArray[index]]: dataSet,
+      };
     }, {});
 };
