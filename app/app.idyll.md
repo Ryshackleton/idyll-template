@@ -36,27 +36,28 @@ doesn't exist.
 * *markdown* syntax is supported.
 
 ### Fetching and referring to data (in this project)
-Data must be added to the array returned
-by `app/data/dataFetches.js`. Static data files can be added to
-`app/data/static_data_files` and parsed as shown below. Each object's
-value should be a Promise that resolves to data in a format
-specific to each chart.
+Data is added as static files to `app/data/static_data_files` and parsed as shown below.
 
-`app/data/dataFetches.js`:
+To add your own data, create a data promise in `app/data/dataFetches.js` to fetch static data or data from an api.
+
+In the object export from `dataFetches.js`, each `key:value` pair represents a
+ `name:Promise that resolves to a dataset`, where the shape of each dataset is specific to each chart.
 
 ```
-export default async () => {
-  const { PATH_TO_DIST_DATA = 'dist/data/' } = config;
-  return [
-    { myData: await json(`${PATH_TO_DIST_DATA}/example-data.json`) },
-    { otherData: await csv(`${PATH_TO_DIST_DATA}/csv-data.csv`) },
-  ];
+/* app/data/dataFetches.js */
+const { PATH_TO_DIST_DATA } = config;
+
+export default {
+  // fetchJSON() and csv() both return a promise that resolves to a dataset
+  myData: fetchJSON(`${PATH_TO_DIST_DATA}/example-data.json`), 
+  dataFromCSV: csv(`${PATH_TO_DIST_DATA}/example-data.csv`),
 };
 ```
 
-Each object's key corresponds to the `[data name:...]` field in
-Idyll Markup, so use the data in the Idyll story you must declare
-it as a data variable.
+### Declaring and passing data to components via Idyll Markup
+
+The dataset `name` is used to declare the datasets in Idyll Markup,
+ after which the datasets can be passed to any component in the markup.
 
 ```
 [data name:'myData' /] // declare the data variable as 'myData'
@@ -106,11 +107,10 @@ component that renders `myData`. Chart gives access to most of the basic [Victor
 ### Custom D3 Components
 
 This is a custom D3 component.
-See `app/components/custom_d3_component`.
 
 [FullWidth]
-
 ```
+/* app/components/custom_d3_component */
 [var name:"state" value:0 /]
 [CustomD3Component
     className:"d3-component"
