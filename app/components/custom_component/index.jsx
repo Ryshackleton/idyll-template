@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class CustomComponent extends React.Component {
@@ -27,3 +28,15 @@ export default class CustomComponent extends React.Component {
     );
   }
 }
+
+CustomComponent.propTypes = {
+  hasError: PropTypes.bool,
+  idyll: PropTypes.object, /* eslint-disable-line react/forbid-prop-types */
+  updateProps: PropTypes.func,
+};
+
+CustomComponent.defaultProps = {
+  hasError: false,
+  idyll: {},
+  updateProps: () => {},
+};

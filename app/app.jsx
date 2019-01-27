@@ -39,7 +39,8 @@ class App extends Component {
         markup={idyllMarkup}
         components={{ ...idyllComponents, ...customComponents }}
         data={data}
-      />);
+      />
+    );
   }
 }
 
