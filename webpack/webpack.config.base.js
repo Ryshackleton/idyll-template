@@ -37,7 +37,7 @@ export default new Config().merge({
   module: {
     rules: [
       {
-        test: /\.idyll.md$/,
+        test: /\.idyll$/,
         use: 'raw-loader'
       },
       {
