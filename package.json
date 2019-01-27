@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "\"Idyll Template\"",
+  "repository": "https://github.com/Ryshackleton/idyll-template",
   "main": "app/app.jsx",
   "scripts": {
     "build:dev": "NODE_ENV='development' $(npm bin)/babel-node $(npm bin)/webpack --progress --colors",
@@ -10,6 +11,7 @@
     "build:watch": "NODE_ENV='development' $(npm bin)/babel-node $(npm bin)/webpack --progress --colors --watch"
   },
   "dependencies": {
+    "acorn": "^6.0.5",
     "ajv": "^6.7.0",
     "d3": "^5.0.0-rc.4",
     "idyll": "^3.12.4",
