@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import * as idyllComponents from 'idyll-components';
 import * as customComponents from './components/index';
-import idyllMarkup from './app.idyll.md';
+import idyllMarkup from './app.idyll';
 import IdyllContent from './containers/idyll_content';
 
 import Spinner from './containers/spinner';
