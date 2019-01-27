@@ -3,14 +3,24 @@ body {
 }
 .idyll-root {
   box-sizing: border-box;
+  margin: 0 auto;
   padding: 60px 0;
   margin-bottom: 60px;
 }
 .idyll-text-container {
   max-width: 600px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 50px;
+}
+.section {
+  padding: 0 10px;
   margin: 0 auto;
 }
 .article-header {
+  width: 600px;
+  max-width: 90vw;
   margin-bottom: 45px;
 }
 .inset {
@@ -23,10 +33,28 @@ input {
 .relative {
   position: relative;
 }
+.aside-container {
+  position: relative;
+}
 .aside {
   position: absolute;
-  width: 200px;
-  right: -225px;
+  width: 300px;
+  right: calc((10vw + 600px + 150px) / -2);
+}
+.fixed {
+  position: fixed;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  right: 25px;
+  top: 0;
+  bottom: 0;
+  width: calc((80vw - 600px) - 50px);
+  justify-content: center;
+}
+.fixed div {
+  width: 100%;
 }
 .idyll-scroll-graphic {
   position: -webkit-sticky;
@@ -34,9 +62,6 @@ input {
 }
 .idyll-scroll-graphic img {
   max-height: 100vh;
-}
-.idyll-scroll-graphic > * {
-  display: block;
 }
 .component-debug-view {
   position: relative;
@@ -135,18 +160,13 @@ input {
 .tooltip-subtitle {
   font-style: italic;
 }
+@media all and (max-width: 1600px) {
+  .fixed {
+    width: calc((85vw - 600px) - 50px);
+  }
+}
 @media all and (max-width: 1000px) {
-  .idyll-root {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    margin-bottom: 60px;
-    width: 100%;
-  }
-  .idyll-text-container {
-    max-width: calc(100% - 2em);
-    margin: 0 1em;
-  }
+  /* put your css styles in here */
   .desktop {
     display: none;
   }
@@ -157,5 +177,35 @@ input {
     position: static;
     width: 100%;
     right: 0;
+  }
+  .idyll-text-container {
+    max-width: calc(100% - 2em);
+    margin-top: 0;
+    margin-right: 1em;
+    margin-bottom: 0;
+    margin-left: 1em;
+  }
+  .hed {
+    width: 100%;
+  }
+  .idyll-root {
+    padding: 15px 0;
+  }
+  .idyll-root {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 80vh;
+  }
+  .fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    top: initial;
+    background: white;
+    padding: 20px 0;
+    border-top: solid 2px black;
   }
 }
