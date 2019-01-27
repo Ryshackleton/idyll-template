@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IdyllDocument from 'idyll-document';
 
-import './layouts/idyll.scss';
+/** import the desired scss rather than specifying the css prop name
+ * outlined in https://idyll-lang.org/docs/publishing/embedding */
+import './layouts/blog.scss';
 import './themes/blog.scss';
 
 const IdyllContent = ({ markup, components, data }) => {
