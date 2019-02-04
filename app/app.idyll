@@ -3,8 +3,8 @@
 [Header
   title:"Idyll Template"
   subtitle:"Welcome to Idyll. Open app/app.idyll.md to start writing"
-  author:"IHME"
-  authorLink:"http://www.healthdata.org/results/data-visualizations" /]
+  author:"Ryan Shackleton"
+  authorLink:"https://github.com/Ryshackleton" /]
 
 This is an [Idyll](https://idyll-lang.org/) file. Write text
 as you please in here. To add interactivity,
