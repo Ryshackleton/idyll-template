@@ -2,7 +2,7 @@
 
 [Header
   title:"Idyll Template"
-  subtitle:"Welcome to Idyll. Open app/app.idyll.md to start writing"
+  subtitle:"Welcome to Idyll. Open app/app.idyll to start writing"
   author:"Ryan Shackleton"
   authorLink:"https://github.com/Ryshackleton" /]
 
